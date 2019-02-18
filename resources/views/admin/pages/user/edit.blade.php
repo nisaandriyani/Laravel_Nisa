@@ -89,7 +89,7 @@
 				</div><!-- End Card Body-->
 
 				<div class="card-footer">
-					<button class="btn btn-primary" type="submit">Simpan</button>
+					<button class="btn btn-primary" type="submit">Update</button>
 				</div><!--End Card Footer-->
 				
 			</div><!--End Card-->
