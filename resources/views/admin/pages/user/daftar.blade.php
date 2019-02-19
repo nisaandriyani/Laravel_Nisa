@@ -23,6 +23,28 @@
 @endif
 
 
+@if(session('result') == 'delete')
+<div class="alert alert-success alert-dismissible fade show">
+	<strong>Deleted!</strong> Berhasil dihapus.
+	<button type="button" class="close" data-dismiss="alert">
+		&times;
+	</button>
+</div>
+@endif
+
+
+
+@if(session('result') == 'fail-delete')
+<div class="alert alert-danger alert-dismissible fade show">
+	<strong>Failed!</strong> Gagal Dihapus.
+	<button type="button" class="close" data-dismiss="alert">
+		&times;
+	</button>
+</div>
+@endif
+
+
+
 <div class="row">
 	<div class="col-md-6 mb-3">
 		<a href="{{ route('admin.user.add') }}" class="btn btn-primary">[+] Tambah</a>
@@ -98,7 +120,7 @@
 			
 			<div class="modal-body">
 				Apakahanda yakin ingin menghapusnya?
-				<form id="form-delete" method="post" action="#">
+				<form id="form-delete" method="post" action="{{ route('admin.user')}}">
 					{{ csrf_field() }}
 					{{ method_field('delete') }}
 					<input type="hidden" name="id" id="input-id">
@@ -124,7 +146,7 @@
 			$('#deleteModal').modal('show');
 		});
 	$('.btn-delete').click(function(){
-		alert( $('#input-id').val() );
+		$('#form-delete').submit();
 
 	});
 })
