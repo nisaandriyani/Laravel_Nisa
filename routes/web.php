@@ -30,10 +30,10 @@ Route::group(['middleware'=>['auth']], function(){
 
 		Route::get('/edit/{id}','UserController@edit')->name('admin.user.edit')
 				->middleware('akses.admin');
-		Route::post('/edit/{id}','UserController@update')->middleware('akses.admin');
+		Route::post('/edit/{id}','UserController@update')
+				->middleware('akses.admin');
 
-		Route::get('/setting','UserSettingController@form')
-				->name('admin.user.setting');
+		Route::get('/setting','UserSettingController@form')->name('admin.user.setting');
 		Route::post('/setting','UserSettingController@update');
 	});
 });
