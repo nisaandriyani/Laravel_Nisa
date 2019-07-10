@@ -53,8 +53,8 @@
 	<div class="col-md-6 mb-3">
 		<form method="GET" action="{{ route('admin.user') }}">
 			<div class="input-group">
-				<input type="text" name="keywoard" 
-				value="{{ request('keywoard') }}" 
+				<input type="text" name="keyword" 
+				value="{{ request('keyword') }}" 
 				class="form-control">
 				<div class="input-group-append">
 					<button type="submit"
