@@ -107,9 +107,10 @@
 			<div class="modal-body">
 				Apakahanda yakin ingin menghapusnya?
 				<form id="form-delete" method="post" action="{{ route('admin.kategori')}}">
-					{{ csrf_field() }}
-					{{ method_field('delete') }}
 					
+					{{ method_field('delete') }}
+					{{ csrf_field() }}
+
 					<input type="hidden" name="id" id="input-id">
 				</form>
 			</div><!--End Modal Body-->
